@@ -21,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Stopwatch that will also record to a timer.
+ * 停表对象
  */
 public class TimedStopwatch extends BasicStopwatch {
   private final Timer timer;

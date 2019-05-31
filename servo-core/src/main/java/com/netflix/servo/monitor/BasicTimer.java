@@ -59,10 +59,12 @@ public class BasicTimer extends AbstractMonitor<Long>
 
   /**
    * Creates a new instance of the timer.
+   * 创建一个定时器对象  该构造方法被隐藏了 只有通过Monitors 的静态方法才能创建
    */
   BasicTimer(MonitorConfig config, TimeUnit unit, Clock clock) {
     super(config);
 
+    //创建一个新的标签
     final Tag unitTag = Tags.newTag(UNIT, unit.name());
     final MonitorConfig unitConfig = config.withAdditionalTag(unitTag);
     timeUnit = unit;
@@ -78,6 +80,7 @@ public class BasicTimer extends AbstractMonitor<Long>
 
   /**
    * Creates a new instance of the timer.
+   *  基础定时器
    */
   public BasicTimer(MonitorConfig config, TimeUnit unit) {
     this(config, unit, ClockWithOffset.INSTANCE);
@@ -94,6 +97,7 @@ public class BasicTimer extends AbstractMonitor<Long>
 
   /**
    * {@inheritDoc}
+   * 执行定时器  这里返回了一个开启的停表对象
    */
   @Override
   public Stopwatch start() {

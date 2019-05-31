@@ -32,7 +32,9 @@ public class BasicStopwatch implements Stopwatch {
    */
   @Override
   public void start() {
+    //这里没有使用原子更新 看来是不需要做并发处理
     startTime.set(System.nanoTime());
+    //标识启动状态为true
     running.set(true);
   }
 

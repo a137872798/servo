@@ -78,6 +78,7 @@ public final class Monitors {
 
   /**
    * Create a new timer with only the name specified.
+   * 根据指定名称生成一个新的 定时器对象
    */
   public static Timer newTimer(String name) {
     return newTimer(name, TimeUnit.MILLISECONDS);
